@@ -1,5 +1,9 @@
 class Main {
   public static void main(String[] args) {
-    System.out.println("Hello world!");
+    
+    String str1 = "um dois tres quatro cinco";
+    System.out.println(Test.shuffle(str1));
+
+    
   }
 }

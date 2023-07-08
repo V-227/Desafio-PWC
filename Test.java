@@ -9,23 +9,33 @@ public class Test {
    List<String> words = new ArrayList<>();
     
     for (int i = 0; i < str.length(); i++) {
-      char character = str.charAt(i);
       
-      if (character != ' ') {
-        
-        temporary = temporary + character;
-        
-      } else {
-        int j = 0; j++;
+      char character = str.charAt(i);
+      temporary = temporary + character;
+      
+      if (character == ' ') { 
         words.add(temporary);
         temporary = "";
-        
       }
-    }
-     String newString = "";
-    for (int i = words.size() - 1; i >= 0; i--) {
       
     }
-    return null;
+
+      if (!temporary.isEmpty()) {
+        words.add(temporary);
+      }
+    
+    StringBuilder newString = new StringBuilder();
+    System.out.println(words);
+    
+    for (int i = words.size() - 1 ; i >= 0; i--) {
+      newString.append(words.get(i));
+      newString.append(" ");
+    }
+    
+    return newString.toString();
+  }
+
+  public static String remDupicate(String str) {
+    
   }
 }

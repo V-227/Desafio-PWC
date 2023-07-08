@@ -35,7 +35,35 @@ public class Test {
     return newString.toString();
   }
 
-  public static String remDupicate(String str) {
+  public static String remDuplicate(String str) {
+
+    char character = str.charAt(0);
+    List<String> letters = new ArrayList<>();
+    StringBuilder newString = new StringBuilder();
+    newString.append(character);
     
+
+    for (int i = 1; i < str.length(); i++) {
+
+      boolean isDuplicate = false;
+      character = str.charAt(i);
+      
+      for (int j = 0; j < newString.length(); j++) {
+        if (character == newString.charAt(j)) {
+          isDuplicate = true;
+          break;
+        }
+      }
+
+      if (!isDuplicate) {
+        newString.append(character);
+      }
+    }
+
+
+
+
+    return newString.toString();
   }
+  
 }

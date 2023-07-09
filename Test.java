@@ -116,5 +116,28 @@ public class Test {
     }
       return newString.toString();
   }
+
+  public static boolean anagram (String str) {
+    List<Integer> charCount = new ArrayList<>();
+
+    for (int i = 0; i < str.length(); i++) {
+      char character = str.charAt(i);
+      int index = character - 'a';
+
+      while (charCount.size() <= index) {
+        charCount.add(0);
+      }
+      charCount.set(index, charCount.get(index) + 1);
+    }
+
+    int oddCount = 0;
+      for (int count : charCount) {
+        if (count % 2 != 0) {
+          oddCount++;
+        }
+      }
+    
+    return oddCount <= 1;
+  }
 }
  

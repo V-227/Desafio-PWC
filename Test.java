@@ -121,7 +121,7 @@ public class Test {
     List<Integer> charCount = new ArrayList<>();
 
     for (int i = 0; i < str.length(); i++) {
-      char character = str.charAt(i);
+      char character = Character.toLowerCase(str.charAt(i));     
       int index = character - 'a';
 
       while (charCount.size() <= index) {

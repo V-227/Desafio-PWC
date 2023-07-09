@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Test {
   
   public static String shuffle(String str) {
@@ -84,11 +85,36 @@ public class Test {
     }
 }
 
-private static boolean isPalindrome(String str) {
+  private static boolean isPalindrome (String str) {
     StringBuilder reversed = new StringBuilder();
     for (int i = str.length() - 1; i >= 0; i--) {
       reversed.append(str.charAt(i));
     }
     return str.equals(reversed.toString());
 }
- }
+
+  public static String capitalize (String str) {
+    StringBuilder newString = new StringBuilder();
+    List<Character> specialChar = new ArrayList<>();
+      specialChar.add('?');
+      specialChar.add('!');
+      specialChar.add(';');
+      specialChar.add('.');
+
+    for (int i = 0; i < str.length(); i++) {
+      
+      newString.append(str.charAt(i));
+      
+      for (int j = 0; j < specialChar.size(); j++) {
+        if (str.charAt(i) == specialChar.get(j) && i + 2 < str.length()) {
+          char capitalize = Character.toUpperCase(str.charAt(i + 2));
+          newString.append(" ");
+          newString.append(capitalize);
+          i += 2;
+        }
+      }
+    }
+      return newString.toString();
+  }
+}
+ 

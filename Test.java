@@ -25,7 +25,6 @@ public class Test {
       }
     
     StringBuilder newString = new StringBuilder();
-    System.out.println(words);
     
     for (int i = words.size() - 1 ; i >= 0; i--) {
       newString.append(words.get(i));
@@ -38,7 +37,6 @@ public class Test {
   public static String remDuplicate(String str) {
 
     char character = str.charAt(0);
-    List<String> letters = new ArrayList<>();
     StringBuilder newString = new StringBuilder();
     newString.append(character);
     
@@ -65,5 +63,16 @@ public class Test {
 
     return newString.toString();
   }
+
+  public static String palindrome (String str) {
+
+    StringBuilder newString = new StringBuilder();
+
+    for (int i = str.length() - 1; i >= 0; i--) {
+      newString.append(str.charAt(i));
+    }
+    
+      
   
+  }
 }

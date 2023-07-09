@@ -66,13 +66,29 @@ public class Test {
 
   public static String palindrome (String str) {
 
-    StringBuilder newString = new StringBuilder();
-
-    for (int i = str.length() - 1; i >= 0; i--) {
-      newString.append(str.charAt(i));
+    StringBuilder strResult = new StringBuilder();
+    
+    for (int i = 0; i < str.length(); i++) {
+      for (int j = i + 1; j <= str.length(); j++) {
+        String substring = str.substring(i, j);
+        if (isPalindrome(substring) && substring.length() > strResult.length()) {
+          strResult = new StringBuilder(substring);
+            }
+        }
     }
     
-      
-  
-  }
+    if (strResult.length() > 0) {
+        return strResult.toString();
+    } else {
+        return "its not palindrome";
+    }
 }
+
+private static boolean isPalindrome(String str) {
+    StringBuilder reversed = new StringBuilder();
+    for (int i = str.length() - 1; i >= 0; i--) {
+      reversed.append(str.charAt(i));
+    }
+    return str.equals(reversed.toString());
+}
+ }

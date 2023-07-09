@@ -102,17 +102,26 @@ public class Test {
       specialChar.add('.');
 
     for (int i = 0; i < str.length(); i++) {
-      
-      newString.append(str.charAt(i));
+
+      if (i == 0) {
+        Character.toUpperCase(str.charAt(i));
+        char capitalize = Character.toUpperCase(str.charAt(i));
+        newString.append(capitalize);
+        capitalize = ' ';
+      } else {
+        newString.append(str.charAt(i));
+      }
       
       for (int j = 0; j < specialChar.size(); j++) {
+
+        
         if (str.charAt(i) == specialChar.get(j) && i + 2 < str.length()) {
           char capitalize = Character.toUpperCase(str.charAt(i + 2));
           newString.append(" ");
           newString.append(capitalize);
           i += 2;
-        }
-      }
+        } 
+      } 
     }
       return newString.toString();
   }
